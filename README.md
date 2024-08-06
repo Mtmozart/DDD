@@ -149,3 +149,25 @@ Cada bloco tem um papel importante na construção de um código que identificad
 ## Serviços de domínio: 
 Local onde envolvo comportamento de várias entidades complexas ou mapear o fluxo, cria-se um serviços, incluido interfaces;
 "Nessa aula, aprendemos sobre os serviços de domínio, que são como "pontes" para controlar o fluxo da aplicação, especialmente quando temos regras de negócio complexas que envolvem várias entidades. "
+
+## Camada anti corrupção
+Essa camada é como um escudo que protege o seu sistema de problemas que podem vir de outros sistemas externos, como APIs de pagamento, por exemplo.
+
+Imagine que você está construindo um sistema de vendas online e precisa integrar com uma API de pagamento. Essa API pode mudar as regras do jogo a qualquer momento, como alterar o formato dos dados que você precisa enviar ou a forma como ela responde.
+
+A camada anticorrupção entra em ação para evitar que essas mudanças externas impactem o seu sistema. Ela funciona como um tradutor, adaptando os dados para que o seu sistema sempre receba e envie informações no formato que ele espera, independentemente do que acontece com a API de pagamento.
+
+## Contexto compartilhado
+O contexto compartilhado, também conhecido como Shared Kernel, é uma estratégia utilizada no DomainDriven Design (DDD) para lidar com a necessidade de compartilhar dados e regras de negócio entre diferentes subdomínios dentro de um mesmo domínio. 
+
+Pontos importantes:
+Que bom que você está atento aos detalhes! É muito importante entender os pontos chave do Shared Kernel.
+
+Aqui estão algumas notas importantes sobre o contexto compartilhado:
+    Compartilhar com cuidado: O Shared Kernel deve ser usado com cautela. Compartilhar muitas informações e regras pode tornar o núcleo complexo e difícil de gerenciar. É importante analisar cuidadosamente quais informações e regras realmente precisam ser compartilhadas.
+    Riscos de dependência: Ao compartilhar informações e regras, você cria uma dependência entre os subdomínios. Se uma mudança for feita no Shared Kernel, todos os subdomínios que o utilizam serão afetados. É importante ter um processo de controle de versão e testes rigorosos para minimizar os riscos.
+    Evitar duplicação de código: O Shared Kernel ajuda a evitar a duplicação de código, o que é uma grande vantagem. No entanto, é importante garantir que o código compartilhado seja bem documentado e fácil de entender.
+    Manter a consistência: O Shared Kernel garante que todos os subdomínios utilizem as mesmas informações e regras básicas, o que ajuda a manter a consistência da aplicação.
+    Limitar o escopo: É importante definir claramente o escopo do Shared Kernel. Quais informações e regras serão compartilhadas? Quais subdomínios terão acesso ao Shared Kernel?
+    Monitorar o impacto: É importante monitorar o impacto do Shared Kernel na aplicação. Quais subdomínios estão usando o Shared Kernel? Quais são as dependências do Shared Kernel? Quais são os riscos de mudanças no Shared Kernel?
+
