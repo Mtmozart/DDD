@@ -121,8 +121,31 @@ Exemplo: A plataforma de pagamento da CodeChella é um subdomínio genérico. Ex
 ## Separando camadas de responsabilidade
 
 Aqui, pensamos como arquirtetura em camadas, sendo elas: Domain Models e Domain Services
-![]https://cdn1.gnarususercontent.com.br/1/795715/cac66b33-eb09-4a68-ab44-8cec28b3f7cd.png
+
+![](https://cdn1.gnarususercontent.com.br/1/795715/cac66b33-eb09-4a68-ab44-8cec28b3f7cd.png)
 
 Camada de aplicação - recebe as solicitações da interface com o usuário, portanto os controllers podem ir a ela, bem como uma boa prática, os DTO's e os services.
 Camada Domínio: Define as regras de negócio, como um evento precisa ter um nome, data e local, e um ingresso precisa ter um tipo, preço e setor.
 Camada Infraestrutura: Fornece os recursos técnicos para a aplicação funcionar, como salvar os dados de um evento no banco de dados, enviar um email de confirmação de compra de ingresso ou integrar com um sistema de pagamento externo. 
+
+## Design estratégico
+O design estratégico envolve a compreensão dos modelos de domínio, incluindo o subdomínio principal, subdomínios genéricos e subdomínios de suporte, entre outros. Esta é a perspectiva estratégica.
+
+A visão tática, por sua vez, foca em como transformar essa compreensão em código. Nesta etapa do domínio, podemos identificar uma separação clara:
+em blocos de construção (building blocks) para organizar o código e garantir que ele reflita o domínio do negócio.
+
+Esses blocos são como peças de um quebracabeça, cada um com sua função específica:
+
+- Entidades (Entities): Representam os objetos principais do domínio, com identidade única e comportamento próprio. Pense em um cliente, um produto ou um evento.
+- Objetos de Valor (Value Objects): Complementam as entidades, representando informações que não possuem identidade própria. Exemplos: endereço, data, cor.
+- Fábricas (Factories): Padrões para criar objetos complexos, encapsulando a lógica de construção.
+- Agregados (Aggregates): Conjuntos de entidades e objetos de valor que representam uma unidade lógica do domínio.
+
+Cada bloco tem um papel importante na construção de um código que identificador único, nesse caso, um id.
+
+## Agragados
+É quando um grupo de entidades que dependem umas das outras para existir
+
+## Serviços de domínio: 
+Local onde envolvo comportamento de várias entidades complexas ou mapear o fluxo, cria-se um serviços, incluido interfaces;
+"Nessa aula, aprendemos sobre os serviços de domínio, que são como "pontes" para controlar o fluxo da aplicação, especialmente quando temos regras de negócio complexas que envolvem várias entidades. "
