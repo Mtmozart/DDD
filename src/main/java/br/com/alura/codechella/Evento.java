@@ -25,7 +25,6 @@ public class Evento {
     private Long id;
     @Enumerated(EnumType.STRING)
     private Categoria categoria;
-
     private String descricao;
     @Embedded
     private Endereco endereco;
@@ -42,7 +41,7 @@ public class Evento {
         this.data = dados.data();
 
         List<Tipo> tipoIngresso = dados.tipoIngressos().stream()
-                .map(i -> new Tipo(i.formato(), i.definicao(), i.valor(), i.totalDisponivel()))
+                .map(i -> new Tipo(i.setor(), i.definicao(), i.valor(), i.totalDisponivel()))
                 .collect(Collectors.toList());
 
         this.setTipoIngressos(tipoIngresso);

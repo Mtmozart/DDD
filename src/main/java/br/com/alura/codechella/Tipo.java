@@ -26,7 +26,7 @@ public class Tipo {
     @JsonIgnore
     private Evento evento;
     @Enumerated(EnumType.STRING)
-    private Formato formato;
+    private Setor setor;
     @Enumerated(EnumType.STRING)
     private Definicao definicao;
     private Double valor;
@@ -38,8 +38,8 @@ public class Tipo {
 
     private Tipo() {}
 
-    public Tipo(Formato formato, Definicao definicao, Double valor, int totalDisponivel) {
-        this.formato = formato;
+    public Tipo(Setor setor, Definicao definicao, Double valor, int totalDisponivel) {
+        this.setor = setor;
         this.definicao = definicao;
         this.valor = valor;
         this.totalDisponivel = totalDisponivel;
@@ -57,16 +57,12 @@ public class Tipo {
         return evento;
     }
 
-    public void setEvento(Evento evento) {
-        this.evento = evento;
+    public Setor getSetor() {
+        return setor;
     }
 
-    public Formato getFormato() {
-        return formato;
-    }
-
-    public void setFormato(Formato formato) {
-        this.formato = formato;
+    public void setSetor(Setor setor) {
+        this.setor = setor;
     }
 
     public Definicao getDefinicao() {
@@ -91,6 +87,10 @@ public class Tipo {
 
     public void setTotalDisponivel(int totalDisponivel) {
         this.totalDisponivel = totalDisponivel;
+    }
+
+    public void setEvento(Evento evento) {
+        this.evento = evento;
     }
 
     public List<Ingresso> getIngressos() {
