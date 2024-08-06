@@ -99,7 +99,7 @@ Analisar o negócio de maneira a separar em domínios e subdomínios.
 Como entender o que é domínio principal e subdomínio: 
 Mapeia-se o espaço do problema e depois com o espaço de solução onde analiso o contexto "bounded context", crio contextos limitados para lhe dar com eles.
 
-[Imagem-da-alura-exemplo](https://cdn1.gnarususercontent.com.br/1/795715/52fd5329-0a08-48e7-a4f6-00cce7844bc2.png)
+![](https://cdn1.gnarususercontent.com.br/1/795715/52fd5329-0a08-48e7-a4f6-00cce7844bc2.png)
 
 ## Subdomínio
 
@@ -117,3 +117,12 @@ Características:
     Baixo risco: Se a solução não atender às necessidades, é fácil trocar por outra.
 
 Exemplo: A plataforma de pagamento da CodeChella é um subdomínio genérico. Existem diversas plataformas de pagamento disponíveis no mercado, e a CodeChella pode escolher a que melhor se adapta às suas necessidades.
+
+## Separando camadas de responsabilidade
+
+Aqui, pensamos como arquirtetura em camadas, sendo elas: Domain Models e Domain Services
+![]https://cdn1.gnarususercontent.com.br/1/795715/cac66b33-eb09-4a68-ab44-8cec28b3f7cd.png
+
+Camada de aplicação - recebe as solicitações da interface com o usuário, portanto os controllers podem ir a ela, bem como uma boa prática, os DTO's e os services.
+Camada Domínio: Define as regras de negócio, como um evento precisa ter um nome, data e local, e um ingresso precisa ter um tipo, preço e setor.
+Camada Infraestrutura: Fornece os recursos técnicos para a aplicação funcionar, como salvar os dados de um evento no banco de dados, enviar um email de confirmação de compra de ingresso ou integrar com um sistema de pagamento externo. 
